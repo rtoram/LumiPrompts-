@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Links</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="sidebar">
+        <h3>Banco de Links</h3>
+        <button onclick="showSection('links')">Links</button>
+        <button onclick="showSection('ideas')">Ideias</button>
+        <button onclick="showSection('calendar')">Calendário</button>
+        <button onclick="toggleTheme()" id="theme-btn">Mudar Tema</button>
+    </div>
+    <div class="content">
+        <!-- Links -->
+        <section id="links-section" class="section hidden">
+            <h2>Links</h2>
+            <input type="text" id="link-input" placeholder="Cole o link aqui">
+            <input type="text" id="tag-input" placeholder="Adicione uma tag">
+            <button onclick="addLink()">Adicionar</button>
+            <ul id="link-list"></ul>
+            <button onclick="exportSection('links')">Exportar Links</button>
+            <button onclick="printSection('links')">Imprimir Links</button>
+        </section>
+
+        <!-- Ideias -->
+        <section id="ideas-section" class="section hidden">
+            <h2>Ideias</h2>
+            <textarea id="idea-input" placeholder="Digite ou cole sua ideia"></textarea>
+            <button onclick="saveIdea()">Salvar Ideia</button>
+            <ul id="idea-list"></ul>
+            <button onclick="exportSection('ideas')">Exportar Ideias</button>
+            <button onclick="printSection('ideas')">Imprimir Ideias</button>
+        </section>
+
+        <!-- Calendário -->
+        <section id="calendar-section" class="section hidden">
+            <h2>Calendário</h2>
+            <input type="date" id="event-date">
+            <input type="text" id="event-input" placeholder="Descreva o evento">
+            <button onclick="addEvent()">Adicionar Evento</button>
+            <ul id="event-list"></ul>
+            <button onclick="exportSection('calendar')">Exportar Eventos</button>
+            <button onclick="printSection('calendar')">Imprimir Eventos</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
